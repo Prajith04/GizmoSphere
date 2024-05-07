@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <!-- Display product name and price -->
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" value="{{ product_name }}" readonly>
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" value="{{ price }}" readonly>
+    <!-- Add fields for email and phone number -->
+    {{ form.as_p }}
+    <button type="submit">Buy</button>
+</form>
+{% if message %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+{% endif %}
+{% endblock content %}
