@@ -7,33 +7,33 @@
     <style>
         
         body {
-            font-family: Arial, sans-serif;
+            font: 100% / 1.5 Raleway, sans-serif;
+            color: hsl(230, 100%, 95%);
+            background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
             margin: 0;
             padding: 0;
-            background-color:#141414;
-            color:#fff;
+            color: hsl(230, 100%, 95%);
             line-height: 1.6;
         }
 
         /* Header Styles */
         header {
             background-opacity:0;
-            color: #fff;
             padding: 10px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            
         }
 
         /* Navigation Styles */
         nav {
             background-opacity:0;
-            color: #fff;
+            color: hsl(230, 100%, 95%);;
             padding: 10px;
             text-align: center;
         }
 
         nav a {
-            color: #fff;
+            color: hsl(230, 100%, 95%);
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s ease;
@@ -41,10 +41,10 @@
         }
 
         nav a:hover,nav .sub-menu a:hover{
-            color: #ff6600; /* Orange color on hover */
+            color: hsl(230, 100%, 95%); /* Orange color on hover */
         }
         nav a:hover{
-            box-shadow: 0 0 5px rgba(255, 165, 0, 0.8);
+            box-shadow: 0 0 5px hsl(230, 100%, 95%);;
             padding:5px;
             border-radius:10px;
         }
@@ -71,7 +71,7 @@
         nav .sub-menu a {
             display: block;
             padding: 8px 16px;
-            color: #fff;
+            color: hsl(230, 100%, 95%);
             text-decoration: none;
         }
 
@@ -82,7 +82,6 @@
         /* Footer Styles */
         footer {
             background-opacity:0;
-            color: #fff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
@@ -107,26 +106,6 @@
         p {
             margin-bottom: 15px;
         }
-        .video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-  }
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-  }
 
         /* Add more styles as needed */
         {% block style %}
@@ -134,14 +113,6 @@
     </style>
 </head>
 <body>
-    <div class="video-container">
-  <video autoplay muted loop>
-    <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
-    <!-- Add more source elements for different video formats (webm, ogg, etc.) -->
-    Your browser does not support the video tag.
-  </video>
-</div>
-
   {% block content %}
   {% endblock content %}
     <footer>
