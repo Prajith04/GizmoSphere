@@ -1,8 +1,122 @@
 {% extends "main/base.html" %}
+{% block style %}
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5), /* increased opacity to 0.5 */
+      0 0 0.125em hsla(320, 100%, 60%, 0.6), /* increased opacity to 0.6 */
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0.4), /* increased opacity to 0.4 */
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0.4); /* increased opacity to 0.4 */
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.7), /* increased opacity to 0.7 */
+      0 0 0.125em hsla(320, 100%, 60%, 0.8), /* increased opacity to 0.8 */
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.5), /* increased opacity to 0.5 */
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.6); /* increased opacity to 0.6 */
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.8), /* increased opacity to 0.8 */
+      0 0 0.125em hsla(320, 100%, 90%, 0.9), /* increased opacity to 0.9 */
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.6), /* increased opacity to 0.6 */
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.7); /* increased opacity to 0.7 */
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.8), /* increased opacity to 0.8 */
+      0 0 0.125em hsla(320, 100%, 60%, 0.9), /* increased opacity to 0.9 */
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.6), /* increased opacity to 0.6 */
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.7); /* increased opacity to 0.7 */
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5), /* increased opacity to 0.5 */
+      0 0 0.125em hsla(320, 100%, 60%, 0.6), /* increased opacity to 0.6 */
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0.4), /* increased opacity to 0.4 */
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0.4); /* increased opacity to 0.4 */
+  }
+}
+
+  
+   body{
+    font: 100% / 1.5 Raleway, sans-serif;
+    color: hsl(230, 100%, 95%);
+    background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+    margin-bottom:80px;
+  }
+  
+   {% comment %} body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} {% endcomment %}
+
+  h1 {
+    margin: auto;
+    font-size: 36px;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }
+   .explore {
+    font-weight: 700;
+    text-align: center;
+    font-size: 15px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000,hsl(230, 100%, 95%), #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
+  footer {
+    background-opacity:0;
+    text-align: center;
+    bottom:0;
+    position:fixed;
+    left:10%;
+    right:10%; 
+}
+{% endblock style %}
 {% block content %}
     <header>
         <h1>GizmoSphere</h1>
-        <p>Your Destination for the Latest Gadgets</p>
         <nav>
             <div class="nav-item">
                 <a href="#shop">Shop</a>
@@ -22,10 +136,7 @@
                 <a href="about-us">About Us</a>
             </div>
         </nav>
-    </header>
-    <main>
+      </header>
         <!-- Your main content can be added here -->
-        <h2>Welcome to GizmoSphere!</h2>
-        <p>Explore our wide range of gadgets and electronics.</p>
-    </main>
+        <p class="explore">Explore our wide range of gadgets and electronics.</p>
 {% endblock content %}
