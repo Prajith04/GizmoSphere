@@ -72,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "GizmoSphere.wsgi.application"
-WSGI_APPLICATION="GizmoSphere.wsgi.app"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
